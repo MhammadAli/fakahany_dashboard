@@ -1,4 +1,6 @@
+import 'package:fakahany_dashboard/features/dashboard/views/dashboard_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'core/helper_functions/on_generate_routes.dart';
 
@@ -11,8 +13,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      onGenerateRoute: onGenerateRoute,
+    return const ScreenUtilInit(
+      child: MaterialApp(
+        onGenerateRoute: onGenerateRoute,
+        debugShowCheckedModeBanner: false,
+        initialRoute: DashboardView.routeName,
+      ),
     );
   }
 }
